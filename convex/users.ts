@@ -82,8 +82,7 @@ export const getUsers = query({
 		}
 
 		const users = await ctx.db.query("users").collect();
-		return users;
-		//return users.filter((user) => user.tokenIdentifier !== identity.tokenIdentifier);
+		return users.filter((user) => user.tokenIdentifier !== identity.tokenIdentifier);
 	},
 });
 
